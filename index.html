@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h1>My Calculator</h1>
+    <div class="cal">
+      <div class="screen" id="screen"></div>
+      <div class="section">
+        <button class="values number" value="7">7</button>
+        <button class="values number" value="8">8</button>
+        <button class="values number" value="9">9</button>
+        <button class="values operator" value="*" id="multiply">*</button>
+      </div>
+      <div class="section">
+        <button class="values number" value="4">4</button>
+        <button class="values number" value="5">5</button>
+        <button class="values number" value="6">6</button>
+        <button class="values operator" value="-" id="subtract">-</button>
+      </div>
+      <div class="section">
+        <button class="values number" value="1">1</button>
+        <button class="values number" value="2">2</button>
+        <button class="values number" value="3">3</button>
+        <button class="values operator" value="+" id="add">+</button>
+      </div>
+      <div class="section">
+        <button class="values number" value="0">0</button>
+        <button class="values number" value="00">00</button>
+        <button class="values" value="." id="dec">.</button>
+        <button class="values operator" value="/" id="divide">/</button>
+      </div>
+      <div class="section" id="last">
+        <button class="values" id="clear">Clear All</button>
+        <button class="values" id="del">Del</button>
+        <button class="values" id="equal">=</button>
+        <button class="values operator" value="%" id="per">Rem</button>
+      </div>
+    </div>
+    <script src="cal.js"></script>
+  </body>
+</html>
