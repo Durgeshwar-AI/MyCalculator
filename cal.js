@@ -32,12 +32,12 @@ function clickOperator() {
 }
 
 var clear = document.getElementById("clear");
-clear.onclick = function () {
+clear.addEventListener("click", () => {
   window.location.reload();
-};
+});
 
 var equal = document.getElementById("equal");
-equal.onclick = function () {
+equal.addEventListener("click", () => {
   try {
     var screen = document.getElementById("screen");
     screen.innerText = eval(screen.innerText);
@@ -45,7 +45,7 @@ equal.onclick = function () {
   } catch {
     screen.innerText = "Error";
   }
-};
+});
 
 var del = document.getElementById("del");
 del.addEventListener("click", () => {
