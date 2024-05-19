@@ -18,7 +18,6 @@ function click() {
   for (var i = 0; i < operator.length; i++) {
     operator[i].disabled = false;
   }
-  dec.disabled = false;
 }
 
 function clickOperator() {
@@ -36,8 +35,7 @@ clear.addEventListener("click", () => {
   window.location.reload();
 });
 
-var equal = document.getElementById("equal");
-equal.addEventListener("click", () => {
+function result(){
   try {
     var screen = document.getElementById("screen");
     screen.innerText = eval(screen.innerText);
@@ -45,7 +43,10 @@ equal.addEventListener("click", () => {
   } catch {
     screen.innerText = "Error";
   }
-});
+}
+
+var equal = document.getElementById("equal");
+equal.addEventListener("click", result);
 
 var del = document.getElementById("del");
 del.addEventListener("click", () => {
@@ -58,4 +59,26 @@ del.addEventListener("click", () => {
 
 dec.addEventListener("click", () => {
   dec.disabled = true;
+});
+
+document.getElementById("screen").addEventListener('keydown', function(e) {
+  const allowedKeys = [
+      'Backspace', 'Delete', 'ArrowLeft', 'ArrowRight'
+  ];
+  if (
+      !allowedKeys.includes(e.key) && // Allow control keys
+      !e.key.match(/[0-9+\-*/%.]/) // Allow only number characters
+  ) {
+      e.preventDefault();
+  }
+  for (var i = 0; i < operator.length; i++) {
+    operator[i].disabled = false;
+  }
+  dec.disabled = false;
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+      result();
+  }
 });
